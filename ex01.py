@@ -40,6 +40,7 @@ def buscar_na_tabela():
         id_input = int(input('Digite o ID do carro a ser pesquisado: '))
         comando_sql = 'SELECT * FROM produtos WHERE idprodutos = %s'
         cursor.execute(comando_sql, (id_input,))
+        #DADOS_TABELA É A LISTA CONTENDO TODAS AS INFORMAÇOES DO CARRO Q POSSUI ID PASSANDO NO SELECT
         dados_tabela = cursor.fetchall()
         for dado in dados_tabela:
             print(dado)
