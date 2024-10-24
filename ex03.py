@@ -17,7 +17,7 @@ def criar_na_tabela():
     comando_sql = f'SELECT * FROM produtos WHERE nome = "{nome_input}" AND  categoria = "{categoria_input}"'
     cursor.execute(comando_sql)
     dados_tabela = cursor.fetchall()
-    if dados_tabela:
+    if len(dados_tabela) <= 0:
         print('Produto já existe na tabela')
     else:
         comando_sql = f'INSERT INTO produtos  (ID, nome, categoria, quantidade) VALUES ({id_input}, "{nome_input}", "{categoria_input}", {quantidade_input})'
